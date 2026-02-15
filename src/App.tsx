@@ -579,12 +579,9 @@ const App = () => {
                     </div>
 
                     <div className="relative z-10 p-8 md:p-10">
-                      <div className="flex items-start gap-3">
-                        <span className="text-cyan-300 text-2xl leading-none">✦</span>
-                        <h3 className="text-white text-3xl md:text-4xl font-semibold leading-tight whitespace-pre-line drop-shadow-lg">
-                          {card.title}
-                        </h3>
-                      </div>
+                      <h3 className="text-white text-3xl md:text-4xl font-semibold leading-tight whitespace-pre-line drop-shadow-lg">
+                        {card.title}
+                      </h3>
                     </div>
                   </div>
 
