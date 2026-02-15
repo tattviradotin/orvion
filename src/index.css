@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 173 80% 40%;
+    --radius: 0.5rem;
+  }
+  
+  body {
+    background-color: hsl(var(--background)) !important;
+    color: #ffffff !important;
+  }
+  
+  html {
+    color: #ffffff;
+  }
+  
+  /* Ensure CSS variable-based text colors work */
+  .text-card-foreground {
+    color: hsl(var(--card-foreground)) !important;
+  }
+  
+  .text-foreground {
+    color: hsl(var(--foreground)) !important;
+  }
+  
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground)) !important;
+  }
+}
+
+@layer utilities {
+  .lumana-bg-is-grey-2 {
+    background-color: #0a0a0a; /* What We Do section color - dark */
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  /* Scroll fade-in animations */
+  .scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-fade-in-delay-1 {
+    transition-delay: 0.1s;
+  }
+
+  .scroll-fade-in-delay-2 {
+    transition-delay: 0.2s;
+  }
+
+  .scroll-fade-in-delay-3 {
+    transition-delay: 0.3s;
+  }
+
+  .scroll-fade-in-delay-4 {
+    transition-delay: 0.4s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    animation-fill-mode: backwards;
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .bg-stars {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, white, transparent),
+      radial-gradient(2px 2px at 60px 70px, white, transparent),
+      radial-gradient(1px 1px at 50px 50px, white, transparent),
+      radial-gradient(1px 1px at 130px 80px, white, transparent),
+      radial-gradient(2px 2px at 90px 10px, white, transparent);
+    background-size: 200px 100px;
+    background-repeat: repeat;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spinSlow 20s linear infinite;
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.5;
+    box-shadow: 0 0 200px 100px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 300px 150px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Text Animation Effects */
+@keyframes word-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(10px) scale(0.95);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.word-animate {
+  display: inline-block;
+  opacity: 0;
+  margin: 0 0.1em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#mouse-gradient-react {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 9999px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04), transparent 70%);
+  transform: translate(-50%, -50%);
+  will-change: left, top, opacity;
+  transition: left 70ms linear, top 70ms linear, opacity 300ms ease-out;
+  z-index: 1;
+}
+
+.ripple-effect {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: ripple-pulse 1s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes ripple-pulse {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(20);
+  }
+}
+
+/* Page Transition (no translate/jerk) */
+.page-fade {
+  opacity: 0;
+  transition: opacity 260ms ease-in-out;
+}
+
+.page-fade.page-fade--in {
+  opacity: 1;
+}
